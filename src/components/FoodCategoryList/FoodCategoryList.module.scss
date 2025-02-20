@@ -1,0 +1,27 @@
+.wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    width: 1200px;
+    margin: auto;
+    .card {
+        width: 150px;
+        height: 140px;
+        text-align: center;
+
+        img {
+            width: 100%;
+        }
+        p {
+            font-size: 18px;
+            padding: 8px 0;
+        }
+        &:hover {
+            cursor: pointer;
+            -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+            -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+            box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+            border-radius: 20px;
+        }
+    }
+}
