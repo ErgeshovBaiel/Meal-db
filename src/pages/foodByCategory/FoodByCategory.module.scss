@@ -1,0 +1,30 @@
+.foodList {
+  width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px;
+  margin-top: 220px;
+}
+.foodcard {
+  margin-left: 50px;
+  p {
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    padding-top: 30px;
+  }
+}
+.card {
+  margin: auto;
+  border-radius: 50%;
+}
+.name {
+  width: 1200px;
+  margin: auto;
+  position: relative;
+  top: 150px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 600;
+}

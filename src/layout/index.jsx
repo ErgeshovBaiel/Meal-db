@@ -1,15 +1,13 @@
-import React, { useState } from 'react'
+import { Outlet } from 'react-router-dom'
 import Footer from '../components/footer/Footer'
-import Header from '../components/header/Header';
-import FoodCategoryList from '../components/FoodCategoryList/FoodCategoryList';
+import Header from '../components/header/Header'
 
 const Layout = () => {
-    const [searchTerm, setSearchTerm] = useState("");
-  
+
   return (
     <div>
-        <Header onSearch={(value) => setSearchTerm(value)} />
-        <FoodCategoryList searchTerm={searchTerm} />
+      <Header />
+      <Outlet />
       <Footer />
     </div>
   )

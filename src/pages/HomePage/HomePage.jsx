@@ -1,10 +1,12 @@
-import Layout from '../../layout'
 import React from 'react'
+import FoodCategoryList from '../../components/foodCategoryList/FoodCategoryList'
+import Country from '../../components/country/Country'
 
 const HomePage = () => {
   return (
     <div>
-      <Layout />
+      <FoodCategoryList />
+      <Country />
     </div>
   )
 }
