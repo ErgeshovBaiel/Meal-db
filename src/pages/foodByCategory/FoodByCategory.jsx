@@ -3,10 +3,14 @@ import styles from './FoodByCategory.module.scss'
 import { Spin } from 'antd'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchfoodCategory } from '../../redux/slice/foodCategorySlice'
-import { useParams } from 'react-router-dom'
+import { useParams, Link, data } from 'react-router-dom'
+import {useGetByCountryQuery} from "../../api/foodByCountry"
 
 const FoodByCategory = () => {
   const { categoryName } = useParams(); 
+  const {data} = useGetByCountryQuery(categoryName)
+  console.log(data);
+  
   const {
     list: foodcategory,
     loading,
@@ -35,20 +39,22 @@ const FoodByCategory = () => {
   return (
     <div className="mt-7.5">
       <h1 className={styles.name}>{categoryName}</h1>
-    <div className={styles.foodList}>
-      {foodcategory?.meals?.map(meal => (
-        <div 
-          className={styles.foodcard}
-          key={meal.idMeal} >
-          <img 
-            className={styles.card}
-            src={meal.strMealThumb} 
-            alt={meal.strMeal} 
-          />
-          <p>{meal.strMeal.slice(0, 12)}</p>
-        </div>
-      ))}
-    </div>
+      <div className={styles.foodList}>
+        {foodcategory?.meals?.map(meal => (
+          <Link 
+            to={`/food/${meal.idMeal}`}
+            key={meal.idMeal} 
+            className={styles.foodcard}
+          >
+            <img 
+              className={styles.card}
+              src={meal.strMealThumb} 
+              alt={meal.strMeal} 
+            />
+            <p>{meal.strMeal.slice(0, 12)}</p>
+          </Link>
+        ))}
+      </div>
     </div>
   )
 }

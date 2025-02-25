@@ -22,6 +22,26 @@ class FoodApi {
       return null;
     }
   }
+  async fetchAllfoodDetail(categoryDetail) {
+    try {
+      const response = await axios(`${BASE_URL}/lookup.php?i=${categoryDetail}`);
+      return response.data;
+    } catch (error) {
+      console.error(`Error fetching food for category ${categoryDetail}:`, error);
+      return null;
+    }
+  }
+  async fetchAllfoodCountry(countryName) {
+    try {
+      const response = await axios(`${BASE_URL}/filter.php?a=${countryName}`);
+      console.log("API Response:", response.data);
+      return response.data;
+    } catch (error) {
+      console.error(`Error fetching food for country ${countryName}:`, error);
+      return response.data || { meals: [] };
+    }
+  }
+  
 }
 
 export const api = new FoodApi();

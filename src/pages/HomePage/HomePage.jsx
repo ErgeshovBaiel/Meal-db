@@ -4,7 +4,7 @@ import Country from '../../components/country/Country'
 
 const HomePage = () => {
   return (
-    <div>
+    <div className="relative left-13">
       <FoodCategoryList />
       <Country />
     </div>

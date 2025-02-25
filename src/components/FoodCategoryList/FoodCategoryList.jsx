@@ -20,15 +20,15 @@ const FoodCategoryList = () => {
 
   if (loading) {
     return (
-      <div className='flex items-center justify-center relative top-5 z-50'>
+      <div className='flex items-center justify-center relative top-10 z-50'>
         <Spin size='large' />
       </div>
     )
   }
 
   return (
-    <div className='mt-50 ml-50'>
-      <h2 className='flex items-center justify-center mr-12 mb-12.5 text-3xl'>
+    <div className='relative top-50'>
+      <h2 className='flex items-center justify-center relative bottom-5 right-15 text-3xl '>
         by Category
       </h2>
       <div className={styles.wrap}>

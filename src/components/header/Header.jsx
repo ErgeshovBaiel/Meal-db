@@ -4,6 +4,8 @@ import { Input } from 'antd'
 import { FaHouse } from 'react-icons/fa6'
 import { FaUser } from 'react-icons/fa'
 import { NavLink } from 'react-router-dom'
+import styles from '../header/Header.module.scss'
+
 
 const { Search } = Input
 
@@ -18,7 +20,8 @@ const suffix = (
 
 const Header = ({ onSearch }) => {
   return (
-    <div className='app-container flex items-center justify-between w-1/2 h-25 bg-white fixed top-0 left-0 right-0 z-40'>
+    <div className={styles.container}>
+      <div className="relative   flex items-center justify-between h-30">
       <div className='w-62.5'>
         <NavLink to={'/'}>
           <img
@@ -34,16 +37,18 @@ const Header = ({ onSearch }) => {
           allowClear
           onSearch={onSearch}
           style={{
-            width: 200
-          }}
+            width: 200,
+           }}
         />
-        <div className='flex gap-5 mt-2.5'>
+        <div className='flex gap-5 mt-2.5 relative top-2.5'>
           <NavLink to={'/'}>
             <FaHouse className='text-gray-900' />
           </NavLink>
           <FaUser className='text-gray-900' />
         </div>
       </div>
+      </div>
+
     </div>
   )
 }
