@@ -1,35 +1,61 @@
-* {
-    box-sizing: border-box;
-    margin: 0%;
-    padding: 0%;
-}
 .America {
     width: 1200px;
     margin: auto;
     position: relative;
     top: 200px;
+    left: 25px;
+  
     .name {
-        text-align: center;
-        font-size: 50px;
-        font-weight: 500;
-        margin-bottom: 50px;
+      text-align: center;
+      font-size: 50px;
+      font-weight: 500;
+      margin-bottom: 50px;
     }
+  
     .foodList {
-        width: 1200px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center; /* 🛠 Кошумча, элементтердин туура жайгашуусун камсыз кылуу */
-        gap: 48px;  /* ✅ gap иштеши үчүн flex/grid болушу керек */
+      width: 1200px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 50px;
     }
+  
     .foodcard {
-        display: flex;  /* ✅ flex контейнер катары иштеп кетишин камсыздайт */
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        width: 200px; /* 🛠 Кененирээк болсун */
-        .card {
-            border-radius: 50%;
-        }
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 250px;
+  
+      .card {
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+      }
     }
-    
-}
+  
+    .foodName {
+        font-size: 20px;
+        font-weight: 400;
+        text-align: center;
+        padding-top: 30px;
+    }
+  }
+  
+  .loaderContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    z-index: 50;
+    position: relative; 
+  }
+  
+  
+  .errorMessage {
+    color: red;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  

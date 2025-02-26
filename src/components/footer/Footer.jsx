@@ -1,17 +1,19 @@
-import React from 'react'
+import React from 'react';
+import styles from './Footer.module.scss';
 
 const Footer = () => {
   return (
-    <div className='app-container  h-auto  relative top-150   bg-white'>
-      <hr className="text-gray-500" />
-      <div className='w-62.5 m-auto relative top-12.5 left-125 text-center'>
+    <div className={styles.footerContainer}>
+      <hr className={styles.divider} />
+      <div className={styles.logoContainer}>
         <img
+          className={styles.logo}
           src='https://the-mealdb-mimo.netlify.app/static/media/logo-mealDB.fa8d1d09f74f7c7f2a8b07b85e928f02.svg'
-          alt=''
+          alt='MealDB Logo'
         />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

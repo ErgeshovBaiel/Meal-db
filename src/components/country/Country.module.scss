@@ -1,13 +1,47 @@
+.appContainer {
+  position: relative;
+  top: 300px;
+  right: 10px;
+}
+
+.title {
+  width: 300px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  bottom: 25px;
+  right: 45px;
+  font-size: 1.875rem;
+}
+
+.countryList {
+  width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  margin-top: 50px;
+}
+
 .country {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  
-    img {
-      width: 120px;
-      height: 100px;
-      cursor: pointer;
-    }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  left: 50px;
+
+  img {
+    width: 140px;
+    height: 120px;
   }
 
-  
+  p {
+    margin-top: 5px;
+    font-size: 20px;
+    font-weight: 400;
+  }
+}

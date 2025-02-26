@@ -1,10 +1,40 @@
 .container {
-    width: 1400px;
+    width: 1200px;
     margin: auto;
-    background-color: white;
+    background: white;
     position: fixed;
     top: 0;
-    left: 0;
-    right: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 130px;
     z-index: 40;
-}
+
+    .container2 {
+        padding-top: 30px;
+        display: flex;
+        justify-content: space-between;
+    }
+  
+    .logo {
+      width: 250px;
+    }
+  
+    .searchContainer {
+      display: flex;
+      gap: 60px;
+      align-items: center;
+    }
+  
+    .iconContainer {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+  
+      .icon {
+        color: #1f2937;
+        font-size: 20px;
+        cursor: pointer;
+      }
+    }
+  }
+  

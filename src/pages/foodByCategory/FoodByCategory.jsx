@@ -1,62 +1,42 @@
-import React, { useEffect } from 'react'
-import styles from './FoodByCategory.module.scss'
-import { Spin } from 'antd'
-import { useDispatch, useSelector } from 'react-redux'
-import { fetchfoodCategory } from '../../redux/slice/foodCategorySlice'
-import { useParams, Link, data } from 'react-router-dom'
-import {useGetByCountryQuery} from "../../api/foodByCountry"
+import React from "react";
+import styles from "./FoodByCategory.module.scss";
+import { Spin } from "antd";
+import { useParams, Link } from "react-router-dom";
+import { useGetFoodByCategoryQuery } from "../../api/foodCategory";
 
 const FoodByCategory = () => {
-  const { categoryName } = useParams(); 
-  const {data} = useGetByCountryQuery(categoryName)
-  console.log(data);
-  
-  const {
-    list: foodcategory,
-    loading,
-    error
-  } = useSelector(state => state.foodCategory)
-  const dispatch = useDispatch()
+    const { categoryName } = useParams();
+    const { data, error, isLoading } = useGetFoodByCategoryQuery(categoryName);
 
-  useEffect(() => {
-    if (categoryName) {
-      dispatch(fetchfoodCategory(categoryName)) 
+    if (isLoading) {
+        return (
+            <div className={styles.loaderContainer}>
+                <Spin size="large" />
+            </div>
+        );
     }
-  }, [dispatch, categoryName])
 
-  if (loading) {
+    if (error) {
+        return <p className={styles.errorMessage}>Error: {error.message}</p>;
+    }
+
     return (
-      <div className='flex items-center justify-center relative top-5 z-50'>
-        <Spin size='large' />
-      </div>
-    )
-  }
+        <div className={styles.container}>
+            <h1 className={styles.name}>{categoryName}</h1>
+            <div className={styles.foodList}>
+                {data?.meals?.map((meal) => (
+                    <Link
+                        to={`/food/${meal.idMeal}`}
+                        key={meal.idMeal}
+                        className={styles.foodcard}
+                    >
+                        <img className={styles.card} src={meal.strMealThumb} alt={meal.strMeal} />
+                        <p>{meal.strMeal.slice(0, 12)}</p>
+                    </Link>
+                ))}
+            </div>
+        </div>
+    );
+};
 
-  if (error) {
-    return <p className='text-red-500'>Error: {error}</p>
-  }
-
-  return (
-    <div className="mt-7.5">
-      <h1 className={styles.name}>{categoryName}</h1>
-      <div className={styles.foodList}>
-        {foodcategory?.meals?.map(meal => (
-          <Link 
-            to={`/food/${meal.idMeal}`}
-            key={meal.idMeal} 
-            className={styles.foodcard}
-          >
-            <img 
-              className={styles.card}
-              src={meal.strMealThumb} 
-              alt={meal.strMeal} 
-            />
-            <p>{meal.strMeal.slice(0, 12)}</p>
-          </Link>
-        ))}
-      </div>
-    </div>
-  )
-}
-
-export default FoodByCategory
+export default FoodByCategory;

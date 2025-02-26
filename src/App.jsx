@@ -3,9 +3,9 @@ import { store } from "./redux/store";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Layout from "./layout";
 import HomePage from "./pages/HomePage/HomePage";
-import FoodByCategory from "./pages/foodByCategory/FoodByCategory";
-import FoodDetail from "./pages/foodDetail/FoodDetail";
-import FoodCountry from "./pages/foodCountry/FoodCountry";
+import FoodByCategory from "./pages/FoodByCategory/FoodByCategory";
+import FoodDetail from "./pages/FoodDetail/FoodDetail";
+import FoodCountry from "./pages/FoodCountry/FoodCountry";
 
 const App = () => {
   return (

@@ -1,0 +1,82 @@
+.container {
+    width: 1200px;
+    margin: auto;
+    position: relative;
+    top: 160px;
+}
+
+.loaderContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    z-index: 50;
+    position: relative;
+  }
+  
+
+.errorMessage {
+    color: red;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.foodDetailCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mealInfo {
+    position: relative;
+    top: 0px;
+
+    .mealTitle {
+        position: relative;
+        right: 50px;
+        font-size: 35px;
+        font-weight: 500;
+    }
+
+    .mealImage {
+        position: relative;
+        top: 30px;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+}
+
+.ingredientsContainer {
+    width: 1000px;
+    display: flex;
+    justify-content: center;
+}
+
+.ingredientsList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.ingredientItem {
+    position: relative;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.ingredientImage {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.ingredientText {
+    font-size: 20px;
+    font-weight: 400;
+}

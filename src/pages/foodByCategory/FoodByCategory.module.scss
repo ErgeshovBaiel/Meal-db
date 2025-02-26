@@ -1,24 +1,10 @@
-.foodList {
-  width: 1200px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 50px;
-  margin-top: 220px;
+.container {
+  margin-top: 30px;
+  position: relative;
+  left: 25px;
+
 }
-.foodcard {
-  margin-left: 50px;
-  p {
-    font-size: 18px;
-    font-weight: 400;
-    text-align: center;
-    padding-top: 30px;
-  }
-}
-.card {
-  margin: auto;
-  border-radius: 50%;
-}
+
 .name {
   width: 1200px;
   margin: auto;
@@ -27,4 +13,47 @@
   text-align: center;
   font-size: 40px;
   font-weight: 600;
+}
+
+.foodList {
+  width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px;
+  margin-top: 220px;
+}
+
+.foodcard {
+
+  p {
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    padding-top: 30px;
+  }
+}
+
+.card {
+  display: block;
+  margin: auto;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+
+.loaderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  z-index: 50;
+  position: relative;
+}
+
+
+.errorMessage {
+  color: red;
+  text-align: center;
+  font-size: 1.2rem;
 }

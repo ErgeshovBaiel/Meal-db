@@ -110,5 +110,13 @@ export const country = [
     {
       name: "Palestinian",
       shortName: "PS"
-    }
+    },
+    {
+      name: "Kyrgyzstan",
+      shortName: "KG"
+    },
+    {
+      name: "Kazakstan",
+      shortName: "KZ"
+    },
   ];

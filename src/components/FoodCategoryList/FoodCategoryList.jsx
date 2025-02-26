@@ -1,50 +1,42 @@
-import React, { useEffect } from 'react'
-import styles from './FoodCategoryList.module.scss'
-import { Spin } from 'antd'
-import { useDispatch, useSelector } from 'react-redux'
-import { fetchCategory } from '../../redux/slice/categorySlice'
-import { useNavigate } from 'react-router-dom'
+import React from "react";
+import styles from "./FoodCategoryList.module.scss";
+import { Spin } from "antd";
+import { useGetCategoryQuery } from "../../api/category";
+import { useNavigate } from "react-router-dom";
 
 const FoodCategoryList = () => {
-  const {
-    list: category,
-    loading,
-    error
-  } = useSelector(state => state.category)
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
+    const { data, error, isLoading } = useGetCategoryQuery();
+    const navigate = useNavigate();
 
-  useEffect(() => {
-    dispatch(fetchCategory())
-  }, [dispatch])
+    if (isLoading) {
+        return (
+            <div className={styles.loadingContainer}>
+                <Spin size="large" />
+            </div>
+        );
+    }
 
-  if (loading) {
+    if (error) {
+        return <p className={styles.errorText}>Error: {error.message}</p>;
+    }
+
     return (
-      <div className='flex items-center justify-center relative top-10 z-50'>
-        <Spin size='large' />
-      </div>
-    )
-  }
+        <div className={styles.container}>
+            <h2 className={styles.title}>by Category</h2>
+            <div className={styles.wrap}>
+                {data?.categories?.slice(0, 12).map((cat) => (
+                    <div
+                        className={styles.card}
+                        key={cat.idCategory}
+                        onClick={() => navigate(`/category/${cat.strCategory}`)}
+                    >
+                        <img src={cat.strCategoryThumb} alt={cat.strCategory} />
+                        <p>{cat.strCategory}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+};
 
-  return (
-    <div className='relative top-50'>
-      <h2 className='flex items-center justify-center relative bottom-5 right-15 text-3xl '>
-        by Category
-      </h2>
-      <div className={styles.wrap}>
-        {category?.categories?.slice(0, 12).map(cat => (
-          <div
-            className={styles.card}
-            key={cat.idCategory}
-            onClick={() => navigate(`/category/${cat.strCategory}`)}
-          >
-            <img src={cat.strCategoryThumb} alt={cat.strCategory} />
-            <p>{cat.strCategory}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  )
-}
-
-export default FoodCategoryList
+export default FoodCategoryList;
