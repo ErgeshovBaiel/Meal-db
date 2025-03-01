@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./FoodCategoryList.module.scss";
 import { Spin } from "antd";
-import { useGetCategoryQuery } from "../../api/category";
+import { useGetCategoryQuery } from "../../api/mealby";
 import { useNavigate } from "react-router-dom";
 
 const FoodCategoryList = () => {

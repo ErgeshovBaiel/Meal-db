@@ -30,10 +30,9 @@
 .mealInfo {
     position: relative;
     top: 0px;
+    right: 400px;
 
     .mealTitle {
-        position: relative;
-        right: 50px;
         font-size: 35px;
         font-weight: 500;
     }
@@ -41,15 +40,18 @@
     .mealImage {
         position: relative;
         top: 30px;
-        width: 200px;
-        height: 200px;
+        width: 300px;
+        height: 300px;
         border-radius: 50%;
         object-fit: cover;
     }
 }
 
 .ingredientsContainer {
-    width: 1000px;
+    position: relative;
+    bottom: 350px;
+    left: 200px;
+    width: 800px;
     display: flex;
     justify-content: center;
 }
@@ -77,6 +79,8 @@
 }
 
 .ingredientText {
+    width: 150px;
+    text-align: center;
     font-size: 20px;
     font-weight: 400;
 }

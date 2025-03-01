@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './FoodDetail.module.scss'
 import { Spin } from 'antd'
 import { useParams } from 'react-router-dom'
-import { useGetFoodDetailQuery } from '../../api/foodDetail'
+import { useGetFoodDetailQuery } from '../../api/mealby'
 
 const FoodDetail = () => {
   const { idMeal } = useParams()
@@ -25,7 +25,7 @@ const FoodDetail = () => {
       {data?.meals?.map(meal => (
         <div key={meal.idMeal} className={styles.foodDetailCard}>
           <div className={styles.mealInfo}>
-            <h1 className={styles.mealTitle}>{meal.strMeal.slice(0, 18)}</h1>
+            <h1 className={styles.mealTitle}>{meal.strMeal.slice(0, 24)}</h1>
             <img
               className={styles.mealImage}
               src={meal.strMealThumb}
@@ -48,7 +48,7 @@ const FoodDetail = () => {
                         className={styles.ingredientImage}
                       />
                       <span className={styles.ingredientText}>
-                        {`${measure} ${meal[key]}`.slice(0,20)}
+                        {`${measure} ${meal[key]}`.slice(0,24)}
                       </span>
                     </li>
                   )

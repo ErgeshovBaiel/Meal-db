@@ -1,23 +1,25 @@
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Layout from "./layout";
-import HomePage from "./pages/HomePage/HomePage";
-import FoodByCategory from "./pages/FoodByCategory/FoodByCategory";
-import FoodDetail from "./pages/FoodDetail/FoodDetail";
-import FoodCountry from "./pages/FoodCountry/FoodCountry";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { menu } from "./routes/routes";
 
 const App = () => {
   return (
     <Provider store={store}>
       <Router>
         <Routes>
-          <Route path="/" element={<Layout />} >
-            <Route index element={<HomePage />} />
-            <Route path="category/:categoryName" element={<FoodByCategory />} />
-            <Route path="food/:idMeal" element={<FoodDetail />} />
-            <Route path="country/:countryName" element={<FoodCountry />} />
+          {menu.map(route => (
+            <Route key={route.name} path={route.path} element={route.element}>
+              {route.children?.map(child => (
+                <Route
+                  key={child.path || "index"}
+                  index={child.index}
+                  path={child.path}
+                  element={child.element}
+                />
+              ))}
             </Route>
+          ))}
         </Routes>
       </Router>
     </Provider>

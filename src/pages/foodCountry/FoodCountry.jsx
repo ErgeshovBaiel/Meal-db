@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./FoodCountry.module.scss";
 import { Spin } from "antd";
 import { useParams, Link } from "react-router-dom";
-import { useGetByCountryQuery } from "../../api/foodByCountry";
+import { useGetByCountryQuery } from "../../api/mealby";
 
 const FoodCountry = () => {
   const { countryName } = useParams();
@@ -29,7 +29,7 @@ const FoodCountry = () => {
         {data?.meals?.map(({ idMeal, strMeal, strMealThumb }) => (
           <Link to={`/food/${idMeal}`} key={idMeal} className={styles.foodcard}>
             <img className={styles.card} src={strMealThumb} alt={strMeal} />
-            <p className={styles.foodName}>{strMeal.slice(0, 12)}</p>
+            <p className={styles.foodName}>{strMeal}</p>
           </Link>
         ))}
       </div>

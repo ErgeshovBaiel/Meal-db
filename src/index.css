@@ -5,3 +5,14 @@
     height: auto;
     margin: auto;
 }
+.ant-input-search :where(.css-dev-only-do-not-override-19lec04).ant-input-group .ant-input-affix-wrapper:not(:last-child) {
+    border-start-start-radius: 15px;
+    border-end-start-radius: 15px;
+    border: 1px solid rgb(169, 168, 168);
+}
+:where(.css-dev-only-do-not-override-19lec04).ant-input-search >.ant-input-group >.ant-input-group-addon:last-child .ant-input-search-button {
+    margin-inline-end: -1px;
+    border-start-end-radius: 15px;
+    border-end-end-radius: 15px;
+    border: 1px solid rgb(169, 168, 168);
+}

@@ -3,6 +3,14 @@
     top: 500px;
     background-color: white;
     padding: 50px 0;
+    hr {
+      width: 100%;
+      border: none;
+      height: 1px;
+      background-color: #ddd;
+      margin-top: 20px;
+      z-index: 50;
+    }
   }
   
   .divider {
