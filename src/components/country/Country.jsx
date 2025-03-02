@@ -8,6 +8,7 @@ const Country = () => {
 
   return (
     <div className={styles.appContainer}>
+      <hr />
       <h2 className={styles.title}>by Country</h2>
       <div className={styles.countryList}>
         {country.map(c => (

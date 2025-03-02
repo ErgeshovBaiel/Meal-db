@@ -4,7 +4,8 @@ import FoodByCategory from "../pages/FoodByCategory/FoodByCategory";
 import FoodDetail from "../pages/FoodDetail/FoodDetail";
 import FoodCountry from "../pages/FoodCountry/FoodCountry";
 import MealName from "../pages/MealName/MealName";
-import Ingredient from "../pages/Ingredient/Ingredient";  // Ingredient Component
+import Ingredient from "../pages/Ingredient/Ingredient";
+import Letter from "../pages/Letter/Letter";
 
 export const menu = [
     {
@@ -33,9 +34,14 @@ export const menu = [
                 element: <MealName />
             },
             {
-                path: "ingredient/:ingredientName", // New ingredient route
-                element: <Ingredient /> // Ingredient page
+                path: "ingredient/:ingredientName",
+                element: <Ingredient /> 
+            },
+            {
+                path: "letter/:curr",
+                element: <Letter />
             }
+            
         ]
     },
 ];

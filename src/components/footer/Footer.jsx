@@ -4,7 +4,7 @@ import styles from './Footer.module.scss';
 const Footer = () => {
   return (
     <div className={styles.footerContainer}>
-      <hr className={styles.divider} />
+      <hr />
       <div className={styles.logoContainer}>
         <img
           className={styles.logo}

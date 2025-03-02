@@ -1,0 +1,41 @@
+.foodLetter {
+    position: relative;
+    top: 400px;
+    width: 1200px;
+    margin: auto;
+    hr {
+        width: 1200px;
+        margin: auto;
+        color: #e3e1e1;
+        margin-top: 100px;
+      }
+    h2 {
+        width: 300px;
+        margin: auto;
+        margin-top: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        right: 45px;
+        font-size: 1.875rem;      
+    }
+    .alphabet {
+        position: relative;
+        left: 45px;
+        display: flex;
+        gap: 30px;
+        margin-top: 50px;
+        .letter {
+            color: #57534e;
+            font-size: 20px;
+            font-weight: 400;
+            transition: transform 0.5s ease-in-out;
+            cursor: pointer;
+            &:hover {
+                transform: scale(1.30);
+                color: #1d8913;
+            }
+        }
+    }
+}

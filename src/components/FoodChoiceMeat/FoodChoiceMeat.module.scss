@@ -1,32 +1,27 @@
-.loadingcontainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 200px;
-}
 .container {
     width: 1200px;
     margin: auto;
     position: relative;
     top: 150px;
+
     .swiperContainer {
         padding-top: 50px;
     }
+
     img {
         width: 400px;
         height: 400px;
         cursor: pointer;
     }
+
     p {
         text-align: center;
-        font-size: 1.5rem; 
+        font-size: 1.5rem;
         position: relative;
-        top: 2rem; 
+        top: 2rem;
         cursor: pointer;
     }
-    .swiperContainer {
-        margin: 50px;
-    }
+
     h2 {
         display: flex;
         align-items: center;
@@ -35,5 +30,39 @@
         top: 35px;
         right: 25px;
         font-size: 1.875rem;
+    }
+
+    // Адаптив
+    @media (max-width: 1024px) {
+        .swiperContainer {
+            margin: 20px;
+        }
+
+        img {
+            width: 300px;
+            height: 300px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        img {
+            width: 250px;
+            height: 250px;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        img {
+            width: 200px;
+            height: 200px;
+        }
+
+        p {
+            font-size: 1rem;
+        }
     }
 }

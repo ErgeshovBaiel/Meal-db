@@ -1,0 +1,68 @@
+.container {
+    position: relative;
+    top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    h1 {
+      width: 100%;
+      text-align: center;
+      font-size: 2.5rem;
+      margin: 4rem 0;
+      font-weight: 600;
+    }
+  
+    .grid {
+      display: grid;
+      margin-top: 100px;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 50px;
+      justify-content: center;
+      align-items: center;
+  
+      @media (min-width: 640px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+  
+      @media (min-width: 1024px) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  
+    .mealCard {
+      max-width: 250px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      transition: opacity 0.3s ease-in-out;
+  
+  
+  
+      img {
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+        transition: transform 0.5s ease-in-out;
+        cursor: pointer;
+        &:hover {
+          transform: scale(1.1);
+      }
+      }
+  
+      p {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 18px;
+      }
+    }
+  }
+  

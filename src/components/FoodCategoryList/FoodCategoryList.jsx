@@ -22,6 +22,7 @@ const FoodCategoryList = () => {
 
     return (
         <div className={styles.container}>
+            <hr />
             <h2 className={styles.title}>by Category</h2>
             <div className={styles.wrap}>
                 {data?.categories?.slice(0, 12).map((cat) => (

@@ -2,7 +2,7 @@ import { createApi } from '@reduxjs/toolkit/query/react'
 import { baseQuery } from './baseQuery'
 
 export const mealby = createApi({
-  reducerPath: 'foodByCountry',
+  reducerPath: 'mealby',
   baseQuery,
   endpoints: builder => ({
     getCategory: builder.query({
@@ -25,10 +25,12 @@ export const mealby = createApi({
     }),
     getFoodDetail: builder.query({
       query: mealId => `/lookup.php?i=${mealId}`
-    })
+    }),
+    getLetter: builder.query({
+      query: letter => `/search.php?f=${letter}`
+    }),
   })
 })
-
 export const {
   useGetByCountryQuery,
   useSearchByNameQuery,
@@ -36,5 +38,6 @@ export const {
   useGetFoodByCategoryQuery,
   useGetFoodDetailQuery,
   useGetCategoryQuery,
-  useGetChoiceQuery 
+  useGetChoiceQuery,
+  useGetLetterQuery,
 } = mealby

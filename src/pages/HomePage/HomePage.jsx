@@ -4,6 +4,7 @@ import FoodCategoryList from '../../components/foodCategoryList/FoodCategoryList
 import Hero from '../../components/Hero/Hero';
 import styles from './HomePage.module.scss';
 import FoodChoiceMeat from '../../components/FoodChoiceMeat/FoodChoiceMeat';
+import FoodLetter from '../../components/FoodLetter/FoodLetter';
 
 const HomePage = () => {
   return (
@@ -12,6 +13,7 @@ const HomePage = () => {
       <FoodChoiceMeat />
       <FoodCategoryList />
       <Country />
+      <FoodLetter />
     </div>
   );
 }

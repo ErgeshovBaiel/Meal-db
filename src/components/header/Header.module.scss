@@ -11,45 +11,87 @@
   align-items: center;
   padding-top: 20px;
   z-index: 40;
+
   hr {
-    width: 100%;
-    border: none;
-    height: 1px; /* Калыңдыгын белгилөө */
-    background-color: #ddd; /* Түс берүү */
-    margin-top: 30px; /* Жогору боштук берүү */
-    z-index: 50;
+      width: 100%;
+      border: none;
+      height: 1px;
+      background-color: #ddd;
+      margin-top: 30px;
+      z-index: 50;
   }
-  
+
   .container2 {
-    width: 1200px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
+      width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
   }
 
   .logo {
-    width: 250px;
+      width: 250px;
+      @media (max-width: 720px) {
+        img {
+            background-color: red;
+        }
+    }
   }
 
   .searchContainer {
-    display: flex;
-    gap: 60px;
-    align-items: center;
-    ::placeholder {
-      color: rgb(118, 118, 118);
-      opacity: 1;
-    }
+      display: flex;
+      gap: 60px;
+      align-items: center;
+
+      ::placeholder {
+          color: rgb(118, 118, 118);
+          opacity: 1;
+      }
   }
 
   .iconContainer {
-    display: flex;
-    gap: 30px;
-    align-items: center;
+      display: flex;
+      gap: 30px;
+      align-items: center;
 
-    .icon {
-      color: #1f2937;
-      font-size: 32px;
-      cursor: pointer;
-    }
+      .icon {
+          color: #1f2937;
+          font-size: 32px;
+          cursor: pointer;
+      }
+  }
+
+  // Адаптив
+  @media (max-width: 1024px) {
+      .container2 {
+          width: 90%;
+      }
+  }
+
+  @media (max-width: 768px) {
+      .container2 {
+          display: flex;
+          justify-content: space-between;
+          flex-direction: column;
+          align-items: center;
+      }
+
+      .searchContainer {
+          gap: 20px;
+      }
+
+      .iconContainer {
+          gap: 20px;
+      }
+  }
+
+  @media (max-width: 480px) {
+      .searchContainer {
+          width: 100%;
+          justify-content: center;
+      }
+
+      .iconContainer {
+          gap: 10px;
+      }
   }
 }
