@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./FoodCategoryList.module.scss";
 import { Spin } from "antd";
 import { useGetCategoryQuery } from "../../api/mealby";
@@ -22,6 +21,7 @@ const FoodCategoryList = () => {
 
     return (
         <div className={styles.container}>
+            <h1>Hello World</h1>
             <hr />
             <h2 className={styles.title}>by Category</h2>
             <div className={styles.wrap}>
